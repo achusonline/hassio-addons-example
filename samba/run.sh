@@ -6,6 +6,11 @@ if [[ ! -e /share/hdd ]]; then
     chmod -R 0777 /share/hdd
 fi
 
+if [[ ! -e /share/hdd2 ]]; then
+    mkdir -p /share/hdd2
+    chmod -R 0777 /share/hdd2
+fi
+
 CONFIG_PATH=/data/options.json
 
 WORKGROUP=$(jq --raw-output '.workgroup' $CONFIG_PATH)
@@ -19,6 +24,10 @@ NAME=
 
 if [[ -e /dev/sda1 ]]; then
     mount /dev/sda1 /share/hdd
+fi
+
+if [[ -e /dev/sdb1 ]]; then
+    mount /dev/sdb1 /share/hdd2
 fi
 
 # Check Login data
