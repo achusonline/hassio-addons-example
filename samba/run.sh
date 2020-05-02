@@ -29,6 +29,12 @@ fi
 if [[ -e /dev/sdb1 ]]; then
     mount /dev/sdb1 /share/hdd2
 fi
+if [[ -e /dev/sdb2 ]]; then
+    mount /dev/sdb2 /share/hdd2
+fi
+if [[ -e /dev/sdb3 ]]; then
+    mount /dev/sdb3 /share/hdd2
+fi
 
 # Check Login data
 if [ -z "${USERNAME}" ] || [ -z "${PASSWORD}" ]; then
